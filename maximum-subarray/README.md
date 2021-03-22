@@ -1,3 +1,4 @@
+[Discussion Post (created on 22/2/2021 at 13:56)](https://leetcode.com/problems/maximum-subarray/discuss/1121838/C%2B%2BRuntime%3A-4-ms-faster-than-96.39-of-C%2B%2B-online-submissions)  
 <h2>53. Maximum Subarray</h2><h3>Easy</h3><hr><div><p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return <em>its sum</em>.</p>
 
 <p>&nbsp;</p>
