@@ -1,3 +1,4 @@
+[Discussion Post (created on 30/2/2021 at 20:38)](https://leetcode.com/problems/find-lucky-integer-in-an-array/discuss/1134474/c%2B%2B-0-ms-faster-than-100.00-of-C%2B%2B-online-submissions)  
 [Discussion Post (created on 30/2/2021 at 20:37)](https://leetcode.com/problems/find-lucky-integer-in-an-array/discuss/1134472/C%2B%2B-0-ms-faster-than-100.00-of-C%2B%2B-online-submissions)  
 <h2>1394. Find Lucky Integer in an Array</h2><h3>Easy</h3><hr><div><p>Given an array of integers <code>arr</code>, a lucky integer is an integer which has a frequency in the array equal to its value.</p>
 
