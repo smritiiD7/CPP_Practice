@@ -1,3 +1,4 @@
+[Discussion Post (created on 18/4/2021 at 22:10)](https://leetcode.com/problems/count-of-matches-in-tournament/discuss/1216317/C%2B%2B-beginner-friendly.)  
 <h2>1688. Count of Matches in Tournament</h2><h3>Easy</h3><hr><div><p>You are given an integer <code>n</code>, the number of teams in a tournament that has strange rules:</p>
 
 <ul>
