@@ -4,13 +4,8 @@ public:
         int cnt=0;
         if(n<=0)
             return false;
-        while(n)
-        {
             n&=n-1;
-            cnt++;
-            
-        }
-        if(cnt==1)
+        if(n==0)
             return true;
         return false;
         
