@@ -1,9 +1,14 @@
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        long long x=sqrt(num);
-        if(x*x==num)
-            return true;
+        int i=1;
+        while(num>0)
+        {
+            num-=i;
+            i+=2;
+            if(num==0)
+                return true;
+        }
         return false;
     }
 };
