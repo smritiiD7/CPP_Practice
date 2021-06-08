@@ -1,30 +1,25 @@
 class Solution {
 public:
     bool checkZeroOnes(string s) {
-        int i,maxiOne=0,maxiZero=0;
+        int i,maxiOne=0,maxiZero=0,ones=0,zeroes=0;
         for(i=0;i<s.length();i++)
         {
-            int cnt1=0;
-            while(s[i]=='1')
+            if(s[i]=='1')
             {
-                cnt1++;
-                i++;
+                ones++;
+                zeroes=0;
             }
-            maxiOne=max(maxiOne,cnt1);
-        }
-        for(i=0;i<s.length();i++)
-        {
-            int cnt0=0;
-            while(s[i]=='0')
+            else
             {
-                cnt0++;
-                i++;
+                zeroes++;
+                ones=0;
             }
-            maxiZero=max(maxiZero,cnt0);
+            maxiOne=max(ones,maxiOne);
+            maxiZero=max(zeroes,maxiZero);
         }
-        if(maxiOne>maxiZero)
-           return true;
-        return false;
+        return maxiOne>maxiZero;
+        
+        
         
     }
 };
