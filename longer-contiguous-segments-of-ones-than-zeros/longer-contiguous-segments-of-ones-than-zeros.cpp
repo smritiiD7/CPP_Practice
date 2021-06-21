@@ -1,24 +1,24 @@
 class Solution {
 public:
     bool checkZeroOnes(string s) {
-        int i,maxiOne=0,maxiZero=0,ones=0,zeroes=0;
+         int zero=0,one=0,i;
+        int maxiZero=0,maxiOne=1;
         for(i=0;i<s.length();i++)
         {
             if(s[i]=='1')
             {
-                ones++;
-                zeroes=0;
+                one++;
+                zero=0;
             }
             else
             {
-                zeroes++;
-                ones=0;
+                zero++;
+                one=0;
             }
-            maxiOne=max(ones,maxiOne);
-            maxiZero=max(zeroes,maxiZero);
+            maxiOne=max(maxiOne,one);
+            maxiZero=max(maxiZero,zero);
         }
-        return maxiOne>maxiZero;
-        
+        return  maxiZero<maxiOne;
         
         
     }
