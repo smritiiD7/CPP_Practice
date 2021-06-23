@@ -10,12 +10,12 @@ public:
             vector<int> temp;
             for(j=0;j<nums.size();j++)
             {
-                if((i&(1<<j)))
+                if(i&(1<<j))
                    {
                       temp.push_back(nums[j]); 
                    }
             }
-           sort(temp.begin(),temp.end());
+          sort(temp.begin(),temp.end());
            s.insert(temp);
         }
         for(auto &i: s)
