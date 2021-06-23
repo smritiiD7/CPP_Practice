@@ -11,7 +11,7 @@ public:
               vector<int> temp;
             for(j=0;j<l;j++)
             {
-                if((i&(1<<j))!=0)
+                if((i&(1<<j)))
                 {
                     temp.push_back(nums[j]);
                 }
