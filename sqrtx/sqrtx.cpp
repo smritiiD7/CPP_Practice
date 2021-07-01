@@ -1,17 +1,25 @@
 class Solution {
 public:
     int mySqrt(int x) {
-       long long cntSum=0,sum=-1,cnt=0;
-        while(cntSum<=x)
+        int left=0,right=x,mid;
+        if(x==0)
+            return 0;
+        if(x==1)
+            return 1;
+        while(left<right)
         {
-            sum+=2;
-            cntSum+=sum;
-            cnt++;
-            if(cntSum==x)
+            int temp;
+            mid=left+(right-left)/2;
+            temp=x/mid;
+            if(temp==mid)
+                return mid;
+            else if(temp>mid)
             {
-                return cnt;
+                left=mid+1;
             }
+            else
+                right=mid;
         }
-        return cnt-1;
+        return left-1;
     }
 };
