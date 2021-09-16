@@ -1,13 +1,15 @@
 class Solution {
 public:
     vector<int> buildArray(vector<int>& nums) {
-        vector<int> v;
-        int i;
-        for(i=0;i<nums.size();i++)
+        int n=nums.size();
+       for(int i=0;i<nums.size();i++)
+       {
+           nums[i]=nums[i]+ (nums[nums[i]]%n)*n;
+       }
+        for(int i=0;i<nums.size();i++)
         {
-            int put=nums[nums[i]];
-            v.push_back(put);
+            nums[i]=nums[i]/n;
         }
-        return v;
+        return nums;
     }
 };
