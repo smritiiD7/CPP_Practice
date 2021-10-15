@@ -11,28 +11,18 @@
  */
 class Solution {
 public:
+     int sum=0;
     int sumOfLeftLeaves(TreeNode* root) {
-        vector<int> leaf;
-        int top= root->val;
+       
         if(root==NULL)
-            return 0;
-       int sum=0;
-        queue<TreeNode*> q;
-        q.push(root);
-        while(q.empty()==false)
+           return 0;
+        if(root!=NULL)
         {
-                TreeNode* curr =q.front();
-                q.pop();
-                if(curr->left!=NULL){
-                    if(curr->left->left==NULL && curr->left->right==NULL)
-                        sum+=curr->left->val;
-                    q.push(curr->left);
-                }
-                  
-                if(curr->right!=NULL)
-                   q.push(curr->right);
-            }
-        //int sum = accumulate(leaf.begin(),leaf.end(),0)-top;
+    if(root->left!=NULL && root->left->left==NULL && root->left->right==NULL)
+    { sum+=root->left->val;}
+        sumOfLeftLeaves(root->left);
+        sumOfLeftLeaves(root->right);
+        }
         return sum;
     }
 };
