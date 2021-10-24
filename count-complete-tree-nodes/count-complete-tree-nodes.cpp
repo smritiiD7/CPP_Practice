@@ -12,24 +12,21 @@
 class Solution {
 public:
     int countNodes(TreeNode* root) {
-      if(root==NULL)
-          return 0;
-        queue<TreeNode*> q;
-        int cnt=0,ans=0;
-        q.push(root);
-        while(q.empty()==false){
-        cnt=q.size();
-        ans+=cnt;
-        for(int i=0;i<cnt;i++)
+        int lh=0,rh=0;
+        TreeNode * curr =root;
+        while(curr!=NULL)
         {
-            TreeNode *curr =q.front();
-            q.pop();
-            if(curr->left!=NULL)
-                q.push(curr->left);
-            if(curr->right!=NULL)
-                q.push(curr->right);
+            lh++;
+            curr=curr->left;
         }
+        curr = root;
+        while(curr!=NULL)
+        {
+            rh++;
+            curr=curr->right;
         }
-        return ans;
+        if(lh==rh)
+            return pow(2,lh)-1;
+        return 1+countNodes(root->left)+countNodes(root->right);
     }
 };
