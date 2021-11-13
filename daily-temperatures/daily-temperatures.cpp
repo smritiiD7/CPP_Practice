@@ -3,7 +3,7 @@ public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
         int n=temperatures.size(),i;
         stack<pair<int,int>> s;
-        vector<int> v;
+        vector<int> v(0,n);
         for(i=n-1;i>=0;i--)
         {
             if(s.size()==0)
