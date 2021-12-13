@@ -13,16 +13,18 @@ class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
         vector<int> arr;
-        ksmall(root , arr );
+        ksmall(root , arr,k );
             return arr[k-1];
     }
-     void ksmall (TreeNode * root , vector<int>& v)
+     void ksmall (TreeNode * root , vector<int>& v,int k)
      {
          if(root!=NULL)
          {
-             ksmall(root->left , v);
+             ksmall(root->left , v,k);
              v.push_back(root->val);
-             ksmall(root->right , v);
+             if(v.size() == k)
+                 return ;
+             ksmall(root->right , v,k);
          }
      }
 };
