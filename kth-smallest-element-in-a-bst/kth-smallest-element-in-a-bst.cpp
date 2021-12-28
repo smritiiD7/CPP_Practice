@@ -11,20 +11,18 @@
  */
 class Solution {
 public:
+     priority_queue<int> pq;
     int kthSmallest(TreeNode* root, int k) {
-        vector<int> arr;
-        ksmall(root , arr,k );
-            return arr[k-1];
+       
+        if(root!=NULL)
+        {
+            pq.push(root->val);
+            if(pq.size()>k)
+                pq.pop();
+            kthSmallest(root->left,k);
+            kthSmallest(root->right,k);
+            
+        }
+        return pq.top();
     }
-     void ksmall (TreeNode * root , vector<int>& v,int k)
-     {
-         if(root!=NULL)
-         {
-             ksmall(root->left , v,k);
-             v.push_back(root->val);
-             if(v.size() == k)
-                 return ;
-             ksmall(root->right , v,k);
-         }
-     }
 };
