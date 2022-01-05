@@ -31,8 +31,7 @@ public:
             }
             else
             {
-                string k =to_string(rank);
-                ans[pq.top().second]=k;
+                ans[pq.top().second]=to_string(rank);
                 pq.pop();
                 rank++;
              
