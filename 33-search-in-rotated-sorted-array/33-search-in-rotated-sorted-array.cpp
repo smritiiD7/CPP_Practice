@@ -5,7 +5,7 @@ public:
         int low=0,high=n-1;
         while(low<=high)
         {
-            int mid = (high-low)/2+low;
+            int mid = (high+low)/2;
             if(nums[mid] == target) return mid;
             if(nums[mid] < nums[high])
             {
