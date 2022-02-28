@@ -14,6 +14,6 @@ public:
             }
             mp[a]++;
         }
-        return ans % (int)(1e9 + 7);
+        return ans % 1000000007;
     }
 };
