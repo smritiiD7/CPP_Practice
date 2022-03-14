@@ -14,7 +14,7 @@ public:
       ListNode *firstHalf = new ListNode(-1);
       ListNode *secondHalf = new ListNode(-1);
       ListNode *res(firstHalf);
-      ListNode  *secondStart(secondHalf);
+      ListNode *secondStart(secondHalf);
       ListNode *curr(head);
         while(curr)
         {
