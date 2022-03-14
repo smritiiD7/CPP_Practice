@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-      ListNode* partition(ListNode* head, int x) {
+      ListNode *partition(ListNode* head, int x) {
       ListNode *firstHalf = new ListNode(-1);
       ListNode *secondHalf = new ListNode(-1);
       ListNode *res(firstHalf);
