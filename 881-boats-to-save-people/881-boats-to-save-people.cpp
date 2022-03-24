@@ -9,8 +9,11 @@ public:
             if(people[left]+people[right]<=limit)
             {
                 right--;
+                left++;
             }
+            else{
             left++;
+            }
             ans++;
            
         }
