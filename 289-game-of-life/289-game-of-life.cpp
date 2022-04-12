@@ -42,19 +42,14 @@ public:
         {
             for(int j=0;j<n;j++)
             {
-                int ln = CountLiveNeighbours(curr,i,j,m,n);
+                int len = CountLiveNeighbours(curr,i,j,m,n);
                 if(board[i][j] == 0) {
-				//currently dead
-				//can become alive if has exactly three live neighbours
-				if(ln == 3) {
+				if(len == 3) {
 					board[i][j] = 1;
 				}
 			}
 			else if(board[i][j] == 1) {
-				//<2 -> die
-				//==2 || ==3 live
-				//>3 ->die
-				if(ln < 2 || ln > 3) {
+				if(len < 2 || len > 3) {
 					board[i][j] = 0;
 				}
 			}
