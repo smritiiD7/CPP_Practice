@@ -11,12 +11,12 @@
  */
 class Solution {
 public:
-    vector<TreeNode*> v;
+    vector<int> v;
     TreeNode* builtNewTree(int start,int end)
     {
         if(start>end) return NULL;
         int mid = (end+start)/2;
-        TreeNode* root = v[mid];
+        TreeNode* root = new TreeNode(v[mid]);
         root->left=builtNewTree(start,mid-1);
         root->right=builtNewTree(mid+1,end);
             return root;
@@ -26,7 +26,7 @@ public:
         if(root == NULL)
             return;
         inorder(root->left);
-        v.push_back(root);
+        v.push_back(root->val);
         inorder(root->right);
     }
     TreeNode* balanceBST(TreeNode* root) {
