@@ -10,9 +10,10 @@ public:
         {
             if(mp.find(c)==mp.end())
             {
+                ch++;
                temp+=ch;
                 mp[c]=ch;
-                ch++;
+                
                 
             }
             else
