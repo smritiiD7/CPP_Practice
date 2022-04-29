@@ -30,7 +30,7 @@ public:
     TreeNode* buildTree(int start,int end, vector<int>& nums)
     {
         if(start>end) return NULL;
-        if(start==end) return new TreeNode(nums[start]);
+        //if(start==end) return new TreeNode(nums[start]);
         int index=findMax(start,end,nums);
         TreeNode *node = new TreeNode(nums[index]);
         node->left=buildTree(start,index-1,nums);
