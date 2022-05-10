@@ -8,6 +8,7 @@ public:
         if(firstIndex==n)
         {
             ans.push_back(curr);
+            return;
         }
         vector<string> v = mp[digits[firstIndex]];
         for(int i=0;i<v.size();i++)
