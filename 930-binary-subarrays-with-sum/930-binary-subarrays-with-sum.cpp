@@ -6,7 +6,7 @@ public:
        // mp[0]++;
         for(int i=0;i<nums.size();i++){
             ps+=nums[i];
-            if(mp[ps-goal]>0)
+            if(mp.find(ps-goal)!=mp.end())
                 cnt+=mp[ps-goal];
             if(ps==goal) cnt++;
             mp[ps]++;
