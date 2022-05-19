@@ -11,7 +11,8 @@
  */
 class Solution {
 public:
-    bool checkSubtreeSum(TreeNode* curr)
+    //BFS
+   /* bool checkSubtreeSum(TreeNode* curr)
     {
       queue<TreeNode*> q1;
         q1.push(curr);
@@ -57,9 +58,42 @@ public:
                 if(curr->right) q.push(curr->right);
             }
         }
-        return ans;
-       
+        return ans; */
+    int sumOfsubtree(TreeNode* root, int &n)
+    {
+        if(root==NULL)
+            return 0;
         
+        int sum=root->val;
+        n++;
+        sum+=sumOfsubtree(root->left,n);
+        sum+=sumOfsubtree(root->right,n);
+        
+        return sum;
+    }
+    
+    
+    
+    
+     int averageOfSubtree(TreeNode* root){
+     
+         if(root==NULL) return 0;
+     
+         if(root->left==NULL && root->right==NULL)
+         {
+             return 1;
+         }
+         
+         int cnt=0,numOfnodes=0;
+         
+         
+         if(sumOfsubtree(root,numOfnodes)/numOfnodes==root->val)
+             cnt++;
+    
+         cnt+=averageOfSubtree(root->left);
+         cnt+=averageOfSubtree(root->right);
+         return cnt;
         
     }
+
 };
