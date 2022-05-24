@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
+        //bfs
        queue<pair<int,int>> pq;
        vector<int> ans;
         pq.push({0,0});
