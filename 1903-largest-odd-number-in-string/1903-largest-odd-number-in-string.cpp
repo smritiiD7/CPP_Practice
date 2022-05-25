@@ -4,7 +4,6 @@ public:
         int end;
         for(int i = num.size()-1;i>=0;i--)
         {
-           // int k = stoi(num[i]);
             if(num[i]%2==1)
             {
                 end = i;
