@@ -10,7 +10,7 @@ public:
             {
                
                 int j = part.length()-1;
-               while(j>=0 &&st.top() == part[j] )
+               while(j>=0 && st.top() == part[j]  )
                {
                    temp.push(st.top());
                    st.pop();
