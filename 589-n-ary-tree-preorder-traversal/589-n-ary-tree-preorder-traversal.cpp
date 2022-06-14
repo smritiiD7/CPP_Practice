@@ -27,9 +27,6 @@ public:
       q.push(root);
       while(q.empty()==false)
       {
-          int n = q.size();
-          for(int i=0;i<n;i++)
-          {
               Node* curr = q.top();
               q.pop();
               ans.push_back(curr->val);
@@ -37,7 +34,6 @@ public:
               {
                   q.push(curr->children[k]);
               }
-          }
       }
         return ans;
     }
