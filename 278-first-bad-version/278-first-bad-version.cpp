@@ -4,7 +4,7 @@
 class Solution {
 public:
     int firstBadVersion(int n) {
-       int high = n , low = 1;
+       int high = n , low = 0;
         while(low<high)
         {
            int mid=low+ (high - low)/2;
