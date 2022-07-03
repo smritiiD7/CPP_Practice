@@ -11,23 +11,31 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-         map<int,int> mp;
-        ListNode* temp(head);
-        while(temp)
+        if(head==NULL) return NULL;
+      map<int,int> freq;
+      ListNode* curr(head);
+      
+      while(curr)
+      {
+         freq[curr->val] ++;
+          curr=curr->next;
+      }
+        
+      ListNode* newHead = new ListNode(-1);
+      ListNode* temp(newHead);
+      
+        for(auto i : freq)
         {
-            mp[temp->val]++;
-            temp=temp->next;
-        }
-        ListNode *dummy=new ListNode(0);
-        ListNode *curr(dummy);
-        for(auto i:mp)
-        {
-            if(i.second==1)
+            if(i.second<2)
             {
-                curr->next= new ListNode(i.first);
-                curr=curr->next;
+                newHead->next = new ListNode(i.first);
+                newHead=newHead->next;
             }
         }
-        return dummy->next;
+        
+        return temp->next;
+    
+        
     }
+    
 };
