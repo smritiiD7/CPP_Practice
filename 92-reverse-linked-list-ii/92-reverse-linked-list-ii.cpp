@@ -10,27 +10,31 @@
  */
 class Solution {
 public:
-    ListNode* reverseBetween(ListNode* A, int B, int C) {
-         vector<int> v;
-    ListNode *curr(A);
-    for(int i=0;i<B-1;i++)
-    {
-        curr=curr->next;
-    } 
-    ListNode *temp(curr);
-    for(int i=0;i<C-B+1;i++)
-    {
-        v.push_back(curr->val);
-        curr=curr->next;
-    }
-    reverse(v.begin(),v.end());
-    int j=0;
-    while(temp!=curr)
-    {
-        temp->val=v[j++];
-        temp=temp->next;
-    }
-    return A;
-
+    ListNode* reverseBetween(ListNode* head, int left, int right) {
+        if(head == NULL) return NULL;
+        vector<int> temp;
+        ListNode* curr(head);
+        while(curr)
+        {
+            temp.push_back(curr->val);
+            curr=curr->next;
+        }
+        
+        int low = left-1, high = right-1;
+        while(low<high)
+        {
+            swap(temp[low],temp[high]);
+            low++;
+            high--;
+        }
+        
+        ListNode* newhead = new ListNode(-1);
+        ListNode* ans(newhead);
+        for(int i : temp)
+        {
+            newhead->next = new ListNode(i);
+            newhead=newhead->next;
+        }
+        return ans->next;
     }
 };
