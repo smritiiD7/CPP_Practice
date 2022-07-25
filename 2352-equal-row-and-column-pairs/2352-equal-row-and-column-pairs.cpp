@@ -14,10 +14,10 @@ public:
          mp[temp]++;
      }
         
-     for(int i=0;i<grid[0].size();i++)
+     for(int i=0;i<grid.size();i++)
      {
          vector<int> temp;
-         for(int j=0;j<grid.size();j++)
+         for(int j=0;j<grid[0].size();j++)
          {
              temp.push_back(grid[j][i]);
          }
